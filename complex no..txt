@@ -1,0 +1,59 @@
+package complex.java;
+import java.util.*;
+
+public class complex {
+	int real,imag;
+	complex(){
+		this.real=0;
+		this.imag=0;
+	}
+complex(int real,int imag){
+	this.real=real;
+	this.imag=imag;
+}
+static void Addition(complex complex1, complex complex2){
+	complex complex3=new complex(0,0);
+	complex3.real=complex1.real + complex2.real;
+	complex3.imag=complex1.imag + complex2.imag;
+	System.out.println(complex3.real+"+"+complex3.imag+"i");
+}
+static void Substraction(complex complex1, complex complex2) {
+	complex complex3=new complex(0,0);
+	complex3.real=complex1.real - complex2.real;
+	complex3.imag=complex1.imag - complex2.imag;
+	System.out.println(complex3.real+"+"+complex3.imag+"i");
+}
+static void Multiplication(complex complex1, complex complex2){
+	complex complex3=new complex(0,0);
+	complex3.real=(complex1.real * complex2.real)-(complex1.imag * complex2.imag);
+	complex3.imag=(complex1.imag * complex2.real)+(complex1.real*complex2.imag);
+	System.out.println(complex3.real+"+"+complex3.imag+"i");
+}
+static void Division(complex complex1, complex complex2){
+	complex complex3=new complex(0,0);
+	complex3.real=(complex1.real * complex2.real+complex1.imag * complex2.imag)/(complex2.real * complex2.real + complex2.imag*complex2.imag);
+	complex3.imag=-(complex1.real * complex2.imag-complex1.imag*complex2.real)/(complex2.real * complex2.real + complex2.imag*complex2.imag);
+	System.out.println(complex3.real+"+"+complex3.imag+"i");
+}
+public static void main(String[] args) {
+		int choice;
+		// TODO Auto-generated method stub
+ complex complex1=new complex(10,20);
+ complex complex2=new complex(5,10);
+ System.out.println("Enter your choice");
+ System.out.println("1.Addition 2.Substraction 3.Multiplication 4.Division");
+ Scanner sc=new Scanner(System.in);
+ choice=sc.nextInt();
+ switch(choice) {
+ case 1:Addition(complex1,complex2);
+ break;
+ case 2:Substraction(complex1,complex2);
+ break;
+ case 3:Multiplication(complex1,complex2);
+ break;
+ case 4:Division(complex1,complex2);
+ break;
+ }
+	}
+
+}
