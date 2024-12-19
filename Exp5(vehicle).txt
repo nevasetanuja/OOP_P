@@ -1,0 +1,86 @@
+import java.io.*;
+interface Vehicle {
+void changegear( int a);
+void speedUp( int a);
+void applybreaks( int a);
+}
+ class Car implements Vehicle {
+int gear;
+int break_1;
+int speed;
+public void changegear( int newgear){
+gear =newgear;
+}
+public void speedUp( int increment){
+speed =speed + increment;
+}
+public void applybreaks( int decrement){
+speed = speed - decrement;
+}
+public void printsp(){
+System.out.println("gear:"+ gear+ "speed:"+ speed + "break_1:"+
+speed);
+}
+}
+ class Bike implements Vehicle {
+int gear;
+int break_1;
+int speed;
+public void changegear( int newgear){
+gear =newgear;
+}
+public void speedUp( int increment){
+speed =speed + increment;
+}
+public void applybreaks( int decrement){
+speed = speed - decrement;
+}
+public void printsp(){
+System.out.println("gear:"+ gear+ "speed:"+ speed + "break_1:"+
+speed);
+}
+}
+ class Bicycle implements Vehicle {
+int gear;
+int break_1;
+int speed;
+public void changegear( int newgear){
+gear =newgear;
+}
+public void speedUp( int increment){
+speed =speed + increment;
+}
+public void applybreaks( int decrement){
+speed = speed - decrement;
+}
+public void printsp(){
+System.out.println("gear:"+ gear+ "speed:"+ speed + "break_1:"+
+speed);
+}
+}
+public class GFC {
+/**
+ * @param args
+ */
+public static void main(String[] args) {
+ Car temp = new Car();
+temp.changegear(2);
+temp.speedUp(15);
+temp.applybreaks(5);
+System.out.println(" car present state :");
+temp.printsp();
+Bike temp_1 = new Bike();
+temp_1.changegear(2);
+temp_1.speedUp(15);
+temp_1.applybreaks(10);
+System.out.println(" Bike present state :");
+temp_1.printsp();
+Bicycle temp_2 = new Bicycle();
+temp_2.changegear(5);
+temp_2.speedUp(55);
+temp_2.applybreaks(20);
+System.out.println(" Bicycle present state :");
+temp_2.printsp();
+// TODO Auto-generated method stub
+}
+}
